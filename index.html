@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <title>モンスター歩数計</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="歩数計">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%232c3e50' width='180' height='180'/><text x='90' y='135' font-size='80' text-anchor='middle' dy='.3em'>🐉</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-screen">
+    <h1>モンスター歩数計</h1>
+    
+    <!-- モンスター表示エリア -->
+    <div class="monster-area">
+      <div class="monster-display" id="monsterDisplay">🐉</div>
+    </div>
+    
+    <!-- ステータス表示エリア -->
+    <div class="status-box">
+      <div class="status-header">
+        <span id="monsterName">ドラゴン</span>
+        <span id="monsterLevel">Lv.1</span>
+      </div>
+      
+      <div class="exp-bar-container">
+        <div class="exp-bar-label">EXP</div>
+        <div class="exp-bar">
+          <div class="exp-bar-fill" id="expBarFill" style="width: 0%"></div>
+        </div>
+        <div class="exp-bar-text" id="expText">0/100</div>
+      </div>
+      
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-label">HP</div>
+          <div class="stat-value" id="hpValue">20/20</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">こうげき</div>
+          <div class="stat-value" id="attackValue">5</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">ぼうぎょ</div>
+          <div class="stat-value" id="defenseValue">3</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">すばやさ</div>
+          <div class="stat-value" id="speedValue">4</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- コマンド入力エリア -->
+    <div class="command-box">
+      <div class="command-label">▼ コマンド ▼</div>
+      
+      <div class="input-section">
+        <input 
+          type="number" 
+          id="stepsInput" 
+          placeholder="歩数を入力"
+          class="steps-input"
+        >
+        <button id="recordBtn" class="command-button">きろく</button>
+      </div>
+      
+      <div class="menu-buttons">
+        <button id="historyBtn" class="menu-button">せいかつ</button>
+        <button id="pokedexBtn" class="menu-button">ずかん</button>
+      </div>
+    </div>
+    
+    <!-- 合計歩数表示 -->
+    <div class="info-box">
+      <div>今日の歩数：<span id="totalSteps">0</span></div>
+      <div>本体レベル：<span id="playerLevel">1</span></div>
+    </div>
+  </div>
+  <!-- ずかんモーダル -->
+  <div id="pokedexModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>ずかん</h2>
+        <button id="closePokedex" class="close-btn">×</button>
+      </div>
+      <div id="pokedexList" class="pokedex-list">
+        <!-- ずかんの内容がここに入る -->
+      </div>
+    </div>
+  </div>
+
+  <!-- せいかつモーダル -->
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>せいかつ</h2>
+        <button id="closeHistory" class="close-btn">×</button>
+      </div>
+      <div id="historyList" class="history-list">
+        <!-- せいかつの内容がここに入る -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
