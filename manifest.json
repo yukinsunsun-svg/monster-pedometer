@@ -1,6 +1,6 @@
 {
   "name": "モンスター万歩計",
-  "short_name": "万歩計",
+  "short_name": "歩数計",
   "description": "歩くとモンスターが成長するたまごっち風万歩計アプリ",
   "start_url": "/monster-pedometer/",
   "display": "standalone",
