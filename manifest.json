@@ -2,7 +2,7 @@
   "name": "モンスター万歩計",
   "short_name": "万歩計",
   "description": "歩くとモンスターが成長するたまごっち風万歩計アプリ",
-  "start_url": "/",
+  "start_url": "/monster-pedometer/",
   "display": "standalone",
   "background_color": "#2c3e50",
   "theme_color": "#e74c3c",
